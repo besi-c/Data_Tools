@@ -26,7 +26,7 @@ timestampFormat = re.compile("\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{1,2}:\d{1,2}.?\d{
 
 for line in data.readlines():
     try:
-        line = line.split(',')
+        line = line.strip().split(',')
         if timestampFormat.match(line[0]):
             dayval = line[0].split(' ')[0].split("/")[1]
             if (currentday != ""):
